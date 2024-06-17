@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+  <!-- <TemplateURL>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/jellyfin.xml</TemplateURL> -->
+  <Beta>False</Beta>
+  <Category>Network Services: Web</Category>
+  <Name>php-apache</Name>
+  <Description>
+    PHP Apache Docker
+  </Description>
+  <ReadMe></ReadMe>
+  <Registry>https://hub.docker.com/repository/docker/wrongkyle/php-apache/</Registry>
+  <GitHub>https://github.com/southpaw5271/docker-repo</GitHub>
+  <Repository>wrongkyle/php-apache</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+    <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>5858</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+    </Networking>
+  <Environment>
+    <Variable>
+      <Name>UMASK</Name>
+      <Value>000</Value>
+    </Variable>
+    <Variable>
+      <Name>PUID</Name>
+      <Value>99</Value>
+    </Variable>
+    <Variable>
+      <Name>PGID</Name>
+      <Value>100</Value>
+    </Variable>
+  </Environment>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/wright-tech/html</HostDir>
+      <ContainerDir>/var/www/html</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:5858]/</WebUI>
+  <ExtraParams></ExtraParams>
+</Containers>
